@@ -35,6 +35,7 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.button5 = new System.Windows.Forms.Button();
             this.lb_user = new System.Windows.Forms.Label();
+            this.btn_ChangePassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -66,7 +67,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 224);
+            this.button4.Location = new System.Drawing.Point(12, 277);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(119, 47);
             this.button4.TabIndex = 3;
@@ -86,27 +87,44 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Manage User";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // lb_user
             // 
+            this.lb_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_user.AutoSize = true;
-            this.lb_user.Location = new System.Drawing.Point(667, 12);
+            this.lb_user.ForeColor = System.Drawing.Color.Tomato;
+            this.lb_user.Location = new System.Drawing.Point(859, 12);
             this.lb_user.Name = "lb_user";
+            this.lb_user.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lb_user.Size = new System.Drawing.Size(35, 13);
             this.lb_user.TabIndex = 5;
             this.lb_user.Text = "label1";
+            this.lb_user.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // btn_ChangePassword
+            // 
+            this.btn_ChangePassword.Location = new System.Drawing.Point(12, 224);
+            this.btn_ChangePassword.Name = "btn_ChangePassword";
+            this.btn_ChangePassword.Size = new System.Drawing.Size(119, 47);
+            this.btn_ChangePassword.TabIndex = 6;
+            this.btn_ChangePassword.Text = "Change Password";
+            this.btn_ChangePassword.UseVisualStyleBackColor = true;
+            this.btn_ChangePassword.Click += new System.EventHandler(this.btn_ChangePassword_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 425);
+            this.ClientSize = new System.Drawing.Size(1008, 500);
+            this.Controls.Add(this.btn_ChangePassword);
             this.Controls.Add(this.lb_user);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmMain";
             this.Text = "StoreManagement";
             this.ResumeLayout(false);
@@ -123,6 +141,7 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label lb_user;
+        private System.Windows.Forms.Button btn_ChangePassword;
     }
 }
 
