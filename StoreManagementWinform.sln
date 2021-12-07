@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreManagementWinform", "StoreManagementWinform\StoreManagementWinform.csproj", "{AC207C0C-8560-4634-8E45-5B55B9586229}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC207C0C-8560-4634-8E45-5B55B9586229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC207C0C-8560-4634-8E45-5B55B9586229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC207C0C-8560-4634-8E45-5B55B9586229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC207C0C-8560-4634-8E45-5B55B9586229}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {067B3B79-ED49-45C0-BF84-C220343CF64C}
+	EndGlobalSection
+EndGlobal
