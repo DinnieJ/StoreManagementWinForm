@@ -10,3 +10,5 @@ C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmMain.resources
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmCreateOrder.resources
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmChangePassword.resources
+C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmManageUser.resources
+C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmCreateUser.resources

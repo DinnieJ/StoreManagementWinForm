@@ -18,16 +18,27 @@ namespace StoreManagementWinform.DAO
                 command.CommandText =
                     "SELECT * FROM [User]";
                 var reader = command.ExecuteReader();
+                List<User> result = new List<User>();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine("{0}\t{1}", reader.GetInt32(0),
-                            reader.GetString(1));
+                        result.Add(new User()
+                        {
+                            ID = reader.GetInt32(0),
+                            Username = reader.GetString(1),
+                            Password = reader.GetString(2),
+                            Name = reader.GetString(3),
+                            PhoneNumber = reader.GetString(4),
+                            DateOfBirth = reader.GetDateTime(5),
+                            Role = reader.GetString(6),
+                            CreatedAt = reader.GetDateTime(7),
+                            UpdatedAt = reader.GetDateTime(8)
+                        });
                     }
                 }
 
-                return new List<User>();
+                return result;
             });
         }
 
@@ -84,6 +95,91 @@ namespace StoreManagementWinform.DAO
             });
         }
 
+        public User AddUser(User u)
+        {
+            return Context.ExecuteQuery<User>((conn) =>
+            {
+                SqlCommand command = new SqlCommand(null, conn) {
+                    CommandText =
+                        "INSERT INTO [User]([Name],[Username],[Password],[PhoneNumber],[DateOfBirth],[Role]) VALUES \n" +
+                        "(@name,@username,@password,@phonenum,@dateofbirth,@role)\n" +
+                        "SELECT * FROM [User] WHERE ID = SCOPE_IDENTITY()"
+                };
 
+                command.Parameters.Add(new SqlParameter("@name", System.Data.SqlDbType.NVarChar) { Value = u.Name });
+                command.Parameters.Add(new SqlParameter("@username", System.Data.SqlDbType.NVarChar) { Value = u.Username });
+                command.Parameters.Add(new SqlParameter("@password", System.Data.SqlDbType.NVarChar) { Value = u.Password });
+                command.Parameters.Add(new SqlParameter("@phonenum", System.Data.SqlDbType.NVarChar) { Value = u.PhoneNumber });
+                command.Parameters.Add(new SqlParameter("@dateofbirth", System.Data.SqlDbType.NVarChar) { Value = u.DateOfBirth.ToString("yyyy-MM-dd HH:mm:ss.fff") });
+                command.Parameters.Add(new SqlParameter("@role", System.Data.SqlDbType.NVarChar) { Value = u.Role });
+
+                var reader = command.ExecuteReader();
+                User user = null;
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        user = new User()
+                        {
+                            ID = reader.GetInt32(0),
+                            Username = reader.GetString(1),
+                            Password = reader.GetString(2),
+                            Name = reader.GetString(3),
+                            PhoneNumber = reader.GetString(4),
+                            DateOfBirth = reader.GetDateTime(5),
+                            Role = reader.GetString(6),
+                            CreatedAt = reader.GetDateTime(7),
+                            UpdatedAt = reader.GetDateTime(8)
+                        };
+                    }
+                }
+                return user;
+            });
+        }
+
+        public void UpdateUser(User u)
+        {
+            Context.ExecuteUpdate((conn) =>
+            {
+                SqlCommand command = new SqlCommand(null, conn)
+                {
+                    CommandText =
+                        "UPDATE [User]\n" +
+                        "SET\n" +
+                        "[User].[Name] = @name," +
+                        "[User].[Username] = @username, " +
+                        "[User].[Password] = @password, " +
+                        "[User].[PhoneNumber] = @phonenum, " +
+                        "[User].[DateOfBirth] = @dateofbirth, " +
+                        "[User].[Role] = @role " +
+                        "WHERE [User].[ID] = @id"
+                };
+
+                command.Parameters.Add(new SqlParameter("@id", System.Data.SqlDbType.Int) { Value = u.ID });
+                command.Parameters.Add(new SqlParameter("@name", System.Data.SqlDbType.NVarChar) { Value = u.Name });
+                command.Parameters.Add(new SqlParameter("@username", System.Data.SqlDbType.NVarChar) { Value = u.Username });
+                command.Parameters.Add(new SqlParameter("@password", System.Data.SqlDbType.NVarChar) { Value = u.Password });
+                command.Parameters.Add(new SqlParameter("@phonenum", System.Data.SqlDbType.NVarChar) { Value = u.PhoneNumber });
+                command.Parameters.Add(new SqlParameter("@dateofbirth", System.Data.SqlDbType.NVarChar) { Value = u.DateOfBirth.ToString("yyyy-MM-dd HH:mm:ss.fff") });
+                command.Parameters.Add(new SqlParameter("@role", System.Data.SqlDbType.NVarChar) { Value = u.Role });
+
+                command.ExecuteNonQuery();
+            });
+        }
+
+        public void DeleteUser(int id)
+        {
+            Context.ExecuteUpdate(conn =>
+            {
+                SqlCommand command = new SqlCommand(null, conn)
+                {
+                    CommandText = "DELETE FROM [User] WHERE [User].[ID] = @id"
+                };
+
+                command.Parameters.Add(new SqlParameter("@id", System.Data.SqlDbType.Int) { Value = id });
+
+                command.ExecuteNonQuery();
+            });
+        }
     }
 }

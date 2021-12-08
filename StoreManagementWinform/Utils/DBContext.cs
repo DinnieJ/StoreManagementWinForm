@@ -24,7 +24,8 @@ namespace StoreManagementWinform.Utils
         {
             try
             {
-                connection.Open();
+                if(connection.State == System.Data.ConnectionState.Closed)
+                    connection.Open();
                 T result = fn(this.connection);
                 
                 return result;
@@ -44,7 +45,8 @@ namespace StoreManagementWinform.Utils
         {
             try
             {
-                connection.Open();
+                if (connection.State == System.Data.ConnectionState.Closed)
+                    connection.Open();
                 fn(connection);
             } catch(Exception e)
             {
@@ -58,6 +60,11 @@ namespace StoreManagementWinform.Utils
                 connection.Close();
             }
             return true;
+        }
+
+        public SqlConnection Connection
+        {
+            get { return this.connection; }
         }
 
         ~DBContext()

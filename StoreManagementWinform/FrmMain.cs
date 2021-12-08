@@ -63,7 +63,8 @@ namespace StoreManagementWinform
         {
             if(AuthUser.Role == "ADMIN")
             {
-                using (var frmManageUser = new FrmManageUser() { })
+                List<User> list = UserRepo.getAllUser();
+                using (var frmManageUser = new FrmManageUser() { ListUser =  list })
                 {
                     if (frmManageUser.ShowDialog() == DialogResult.Yes)
                     {

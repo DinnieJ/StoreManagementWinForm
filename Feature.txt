@@ -1,0 +1,19 @@
+Feature chính
+- Tạo đơn hàng mới
+- Xem đơn hàng
+- Quản lý sản phẩm (CRUD)
+- Quản lý user (CRUD) (done)
+- *Export data
+
+Case * là case khó, nếu k biết làm t có thể làm hộ
+
+Đặc điểm
+Tạo đơn hàng mới
+ - add sản phẩm vào đơn hàng đó (Tham khảo DB)
+ - Sau khi nhập xong sẽ tạo một đơn hàng mới, sau đó add toàn bộ sản phẩm thuộc đơn hàng đó vào DB
+Xem đơn hàng
+ - Show ra đơn hàng của tháng hiện tại
+Quản lý sản phẩm (Thêm sửa xóa sản phẩm, đơn giản thôi)
+Export data ( Case này nếu k kịp có thể bỏ qua )
+ - Port data ra file Excel
+ - Data có thể theo tháng hoặc theo năm
