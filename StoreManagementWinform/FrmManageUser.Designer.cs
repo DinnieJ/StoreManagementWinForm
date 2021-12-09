@@ -60,7 +60,6 @@
             this.groupBox1.Size = new System.Drawing.Size(283, 380);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // button4
             // 
@@ -90,6 +89,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Edit User";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -109,7 +109,7 @@
             this.groupBox2.Size = new System.Drawing.Size(758, 464);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "List User";
             // 
             // dataGridView1
             // 

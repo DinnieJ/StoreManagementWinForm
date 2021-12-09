@@ -8,7 +8,7 @@ namespace StoreManagementWinform.Utils
 {
     class DBContext
     {
-        private readonly string CONNECTION_STRING = "Server=localhost;Database=StoreManagement;Trusted_Connection=True;";
+        private readonly string CONNECTION_STRING = System.Configuration.ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
 
         private SqlConnection connection;
 

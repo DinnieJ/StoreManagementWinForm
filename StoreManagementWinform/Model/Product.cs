@@ -5,8 +5,15 @@ using System.Text;
 
 namespace StoreManagementWinform.Model
 {
-    public class Product
+    public class Product : Model
     {
+        private int _ID;
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
+
         private string _Name;
         public string Name
         {
@@ -14,11 +21,16 @@ namespace StoreManagementWinform.Model
             set { _Name = value; }
         }
 
-        private double _Price;
-        public double Price
+        private int _Price;
+        public int Price
         {
             get { return _Price; }
             set { _Price = value; }
+        }
+
+        public Product()
+        {
+
         }
     }
 }

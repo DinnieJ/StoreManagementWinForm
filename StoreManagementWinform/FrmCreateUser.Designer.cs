@@ -115,6 +115,7 @@
             // cb_role
             // 
             this.cb_role.FormattingEnabled = true;
+            this.cb_role.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cb_role.Items.AddRange(new object[] {
             "ADMIN",
             "STAFF"});

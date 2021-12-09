@@ -23,6 +23,7 @@ namespace StoreManagementWinform
             InitializeComponent();
             UserRepo = new UserRepository();
             this.User = new User();
+            cb_role.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_role.SelectedIndex = 0;
             this.dt_dob.MaxDate = DateTime.Now;
         }

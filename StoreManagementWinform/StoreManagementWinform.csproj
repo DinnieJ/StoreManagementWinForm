@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,12 +45,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\BaseRepository.cs" />
+    <Compile Include="DAO\OrderRepository.cs" />
+    <Compile Include="DAO\ProductRepository.cs" />
     <Compile Include="DAO\UserRepository.cs" />
     <Compile Include="FrmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmChangePassword.Designer.cs">
       <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreateProduct.Designer.cs">
+      <DependentUpon>FrmCreateProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCreateUser.cs">
       <SubType>Form</SubType>
@@ -104,6 +113,9 @@
     <EmbeddedResource Include="FrmChangePassword.resx">
       <DependentUpon>FrmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreateProduct.resx">
+      <DependentUpon>FrmCreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCreateUser.resx">
       <DependentUpon>FrmCreateUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,8 +128,14 @@
     <EmbeddedResource Include="FrmCreateOrder.resx">
       <DependentUpon>FrmCreateOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmManageProduct.resx">
+      <DependentUpon>FrmManageProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmManageUser.resx">
       <DependentUpon>FrmManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateUser.resx">
+      <DependentUpon>FrmUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -131,6 +149,9 @@
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+    <None Include="App.config" />
+    <None Include="Properties\DataSources\StoreManagementWinform.Model.Model.datasource" />
+    <None Include="Properties\DataSources\StoreManagementWinform.Model.Product.datasource" />
     <None Include="Properties\DataSources\StoreManagementWinform.Model.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

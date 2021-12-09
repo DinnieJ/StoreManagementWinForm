@@ -14,12 +14,14 @@ namespace StoreManagementWinform
     public partial class FrmMain : Form
     {
         UserRepository UserRepo;
+        ProductRepository ProductRepo;
         User AuthUser;
         public FrmMain()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.UserRepo = new UserRepository();
+            this.ProductRepo = new ProductRepository();
             this.Load += FrmMain_Load;
             List<User> u = UserRepo.getAllUser();
         }
@@ -74,6 +76,18 @@ namespace StoreManagementWinform
             } else
             {
                 MessageBox.Show("You are not authenticated to use this feature", "Notification");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<Product> ls = ProductRepo.GetProducts();
+            using (var frmManageProduct = new FrmManageProduct() { list = ls })
+            {
+                if (frmManageProduct.ShowDialog() == DialogResult.Yes)
+                {
+
+                }
             }
         }
     }

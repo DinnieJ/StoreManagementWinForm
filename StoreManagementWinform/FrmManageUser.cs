@@ -15,16 +15,19 @@ namespace StoreManagementWinform
     {
         public List<User> ListUser { get; set; }
         UserRepository userRepo;
+        ProductRepository productRepo;
         public FrmManageUser()
         {
             InitializeComponent();
             userRepo = new UserRepository();
+            productRepo = new ProductRepository();
             this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeaderMouseClick += DataGridView1_RowHeaderMouseClick;
             this.Load += FrmManageUser_Load;
             this.dataGridView1.DataBindingComplete += DataGridView1_DataBindingComplete;
             this.dataGridView1.AllowUserToAddRows = false;
+            this.button2.Enabled = false;
             this.button3.Enabled = false;
         }
 
@@ -35,6 +38,7 @@ namespace StoreManagementWinform
 
         private void DataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            this.button2.Enabled = true;
             this.button3.Enabled = true;
         }
 
@@ -81,6 +85,11 @@ namespace StoreManagementWinform
         private void button4_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
