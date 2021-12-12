@@ -48,7 +48,7 @@
             this.groupBox2.Size = new System.Drawing.Size(596, 500);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Order List";
+            this.groupBox2.Text = "List product";
             // 
             // FrmCreateOrder
             // 

@@ -45,6 +45,7 @@ CREATE TABLE OrderProduct (
 	OrderID INT NOT NULL FOREIGN KEY REFERENCES [Order](ID),
 	ProductID INT NOT NULL FOREIGN KEY REFERENCES Product(ID),
 	Sale INT NOT NULL DEFAULT 0,
+	Quantity INT NOT NULL DEFAULT 1,
 	CreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	UpdatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 )
@@ -53,8 +54,6 @@ GO
 INSERT INTO [User]([Name],[Username],[Password],PhoneNumber,DateOfBirth,[Role]) VALUES
 ('admin4','admin4', '123456', '0099993299', '1993-12-01', 'ADMIN')
 GO
-
-
 
 --Trigger on modified item
 

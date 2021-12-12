@@ -96,6 +96,12 @@
     <Compile Include="FrmManageUser.Designer.cs">
       <DependentUpon>FrmManageUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrderDetail.Designer.cs">
+      <DependentUpon>FrmOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,8 @@
     </Compile>
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderDetail.cs" />
+    <Compile Include="Model\OrderMetadata.cs" />
     <Compile Include="Model\OrderProduct.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\User.cs" />
@@ -134,6 +142,9 @@
     <EmbeddedResource Include="FrmManageUser.resx">
       <DependentUpon>FrmManageUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrderDetail.resx">
+      <DependentUpon>FrmOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateUser.resx">
       <DependentUpon>FrmUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +162,8 @@
     </None>
     <None Include="App.config" />
     <None Include="Properties\DataSources\StoreManagementWinform.Model.Model.datasource" />
+    <None Include="Properties\DataSources\StoreManagementWinform.Model.OrderDetail.datasource" />
+    <None Include="Properties\DataSources\StoreManagementWinform.Model.OrderMetadata.datasource" />
     <None Include="Properties\DataSources\StoreManagementWinform.Model.Product.datasource" />
     <None Include="Properties\DataSources\StoreManagementWinform.Model.User.datasource" />
     <None Include="Properties\Settings.settings">

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -36,6 +37,16 @@
             this.button5 = new System.Windows.Forms.Button();
             this.lb_user = new System.Windows.Forms.Label();
             this.btn_ChangePassword = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.orderMetadataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderMetadataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -95,7 +106,7 @@
             this.lb_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_user.AutoSize = true;
             this.lb_user.ForeColor = System.Drawing.Color.Tomato;
-            this.lb_user.Location = new System.Drawing.Point(859, 12);
+            this.lb_user.Location = new System.Drawing.Point(499, 29);
             this.lb_user.Name = "lb_user";
             this.lb_user.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lb_user.Size = new System.Drawing.Size(35, 13);
@@ -113,11 +124,67 @@
             this.btn_ChangePassword.UseVisualStyleBackColor = true;
             this.btn_ChangePassword.Click += new System.EventHandler(this.btn_ChangePassword_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(235, 65);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(560, 423);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Orders";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.staffDataGridViewTextBoxColumn,
+            this.totalDataGridViewTextBoxColumn,
+            this.createdAtDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.orderMetadataBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(548, 398);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // orderMetadataBindingSource
+            // 
+            this.orderMetadataBindingSource.DataSource = typeof(StoreManagementWinform.Model.OrderMetadata);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // staffDataGridViewTextBoxColumn
+            // 
+            this.staffDataGridViewTextBoxColumn.DataPropertyName = "Staff";
+            this.staffDataGridViewTextBoxColumn.HeaderText = "Staff";
+            this.staffDataGridViewTextBoxColumn.Name = "staffDataGridViewTextBoxColumn";
+            this.staffDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            // 
+            // createdAtDataGridViewTextBoxColumn
+            // 
+            this.createdAtDataGridViewTextBoxColumn.DataPropertyName = "CreatedAt";
+            this.createdAtDataGridViewTextBoxColumn.HeaderText = "CreatedAt";
+            this.createdAtDataGridViewTextBoxColumn.Name = "createdAtDataGridViewTextBoxColumn";
+            this.createdAtDataGridViewTextBoxColumn.Width = 150;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 500);
+            this.ClientSize = new System.Drawing.Size(807, 500);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_ChangePassword);
             this.Controls.Add(this.lb_user);
             this.Controls.Add(this.button5);
@@ -128,6 +195,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmMain";
             this.Text = "StoreManagement";
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderMetadataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +213,13 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label lb_user;
         private System.Windows.Forms.Button btn_ChangePassword;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdAtDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource orderMetadataBindingSource;
     }
 }
 

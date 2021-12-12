@@ -15,6 +15,7 @@ namespace StoreManagementWinform
     {
         UserRepository UserRepo;
         ProductRepository ProductRepo;
+        OrderRepository OrderRepo;
         User AuthUser;
         public FrmMain()
         {
@@ -22,8 +23,47 @@ namespace StoreManagementWinform
             this.StartPosition = FormStartPosition.CenterScreen;
             this.UserRepo = new UserRepository();
             this.ProductRepo = new ProductRepository();
+            this.OrderRepo = new OrderRepository();
             this.Load += FrmMain_Load;
-            List<User> u = UserRepo.getAllUser();
+            this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.DataBindingComplete += DataGridView1_DataBindingComplete;
+            this.dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
+            this.dataGridView1.RowHeaderMouseDoubleClick += DataGridView1_RowHeaderMouseDoubleClick;
+        }
+
+        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ID = ((OrderMetadata)this.dataGridView1.CurrentRow.DataBoundItem).ID;
+            List<OrderDetail> result = OrderRepo.GetOrderDetail(ID);
+
+            using (var frmOrderDetail = new FrmOrderDetail() { OrderDetails = result })
+            {
+                if (frmOrderDetail.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private void DataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int ID = ((OrderMetadata)this.dataGridView1.CurrentRow.DataBoundItem).ID;
+            List<OrderDetail> orderDetails = OrderRepo.GetOrderDetail(ID);
+
+            using (var frmOrderDetail = new FrmOrderDetail() { OrderDetails = orderDetails })
+            {
+                if(frmOrderDetail.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private void DataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.ClearSelection();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -35,6 +75,7 @@ namespace StoreManagementWinform
                 {
                     this.lb_user.Text = $"Welcome, {frmLogin.AuthUser.Name}";
                     this.AuthUser = frmLogin.AuthUser;
+                    this.orderMetadataBindingSource.DataSource = OrderRepo.GetOrders();
                 }
                 else Application.Exit();
             }

@@ -24,11 +24,18 @@ namespace StoreManagementWinform
             this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeaderMouseClick += DataGridView1_RowHeaderMouseClick;
+            this.dataGridView1.CellClick += DataGridView1_CellClick; ;
             this.Load += FrmManageUser_Load;
             this.dataGridView1.DataBindingComplete += DataGridView1_DataBindingComplete;
             this.dataGridView1.AllowUserToAddRows = false;
             this.button2.Enabled = false;
             this.button3.Enabled = false;
+        }
+
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.button2.Enabled = true;
+            this.button3.Enabled = true;
         }
 
         private void DataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

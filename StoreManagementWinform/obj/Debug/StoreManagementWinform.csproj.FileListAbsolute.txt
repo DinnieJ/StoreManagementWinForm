@@ -1,5 +1,7 @@
+C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\bin\Debug\StoreManagementWinform.exe.config
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\bin\Debug\StoreManagementWinform.exe
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\bin\Debug\StoreManagementWinform.pdb
+C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.csproj.AssemblyReference.cache
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmChangePassword.resources
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmCreateProduct.resources
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmCreateUser.resources
@@ -8,11 +10,10 @@ C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmCreateOrder.resources
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmManageProduct.resources
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmManageUser.resources
+C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmOrderDetail.resources
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.FrmUpdateUser.resources
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.Properties.Resources.resources
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.csproj.GenerateResource.cache
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.csproj.CoreCompileInputs.cache
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.exe
 C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.pdb
-C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\obj\Debug\StoreManagementWinform.csprojAssemblyReference.cache
-C:\Users\PC\source\repos\StoreManagementWinform\StoreManagementWinform\bin\Debug\StoreManagementWinform.exe.config
