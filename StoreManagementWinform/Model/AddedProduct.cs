@@ -5,23 +5,21 @@ using System.Text;
 
 namespace StoreManagementWinform.Model
 {
-    public class OrderDetail
+    public class AddedProduct
     {
         public int ID { get; set; }
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public int OriginalPrice { get; set; }
+        public string Name { get; set; }
         public int Quantity { get; set; }
         public int Sale { get; set; }
-        private double _Amount;
+        public int Price { get; set; }
         public double Amount
         {
-            get { return Math.Floor(_Amount); }
-            set { _Amount = value; }
+            get { return (Price * Quantity) * (1 - ((double)Sale / 100)); }
         }
 
-        public OrderDetail()
+        public AddedProduct()
         {
+
         }
     }
 }

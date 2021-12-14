@@ -6,7 +6,7 @@ using System.Text;
 
 namespace StoreManagementWinform.DAO
 {
-    class BaseRepository
+    public class BaseRepository
     {
         protected DBContext Context { get; }
 

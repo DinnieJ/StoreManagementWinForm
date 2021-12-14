@@ -131,6 +131,17 @@ namespace StoreManagementWinform
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var frmCreateOrder = new FrmCreateOrder() { Staff = AuthUser })
+            {
+                if(frmCreateOrder.ShowDialog() == DialogResult.OK)
+                {
+                    this.orderMetadataBindingSource.DataSource = OrderRepo.GetOrders();
+                }
+            }
+        }
     }
 
 

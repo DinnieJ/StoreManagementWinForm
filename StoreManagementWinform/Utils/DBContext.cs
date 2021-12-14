@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace StoreManagementWinform.Utils
 {
-    class DBContext
+    public class DBContext
     {
         private readonly string CONNECTION_STRING = System.Configuration.ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
 

@@ -108,6 +108,7 @@
     <Compile Include="FrmUpdateUser.Designer.cs">
       <DependentUpon>FrmUpdateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\AddedProduct.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderDetail.cs" />
@@ -161,6 +162,7 @@
       <Link>.editorconfig</Link>
     </None>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\StoreManagementWinform.Model.AddedProduct.datasource" />
     <None Include="Properties\DataSources\StoreManagementWinform.Model.Model.datasource" />
     <None Include="Properties\DataSources\StoreManagementWinform.Model.OrderDetail.datasource" />
     <None Include="Properties\DataSources\StoreManagementWinform.Model.OrderMetadata.datasource" />

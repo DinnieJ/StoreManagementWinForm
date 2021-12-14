@@ -39,11 +39,11 @@
             this.btn_ChangePassword = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.orderMetadataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderMetadataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderMetadataBindingSource)).BeginInit();
@@ -57,6 +57,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "New Order";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -149,10 +150,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(548, 398);
             this.dataGridView1.TabIndex = 0;
             // 
-            // orderMetadataBindingSource
-            // 
-            this.orderMetadataBindingSource.DataSource = typeof(StoreManagementWinform.Model.OrderMetadata);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -178,6 +175,10 @@
             this.createdAtDataGridViewTextBoxColumn.HeaderText = "CreatedAt";
             this.createdAtDataGridViewTextBoxColumn.Name = "createdAtDataGridViewTextBoxColumn";
             this.createdAtDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // orderMetadataBindingSource
+            // 
+            this.orderMetadataBindingSource.DataSource = typeof(StoreManagementWinform.Model.OrderMetadata);
             // 
             // FrmMain
             // 

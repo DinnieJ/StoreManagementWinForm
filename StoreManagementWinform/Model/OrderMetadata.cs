@@ -5,11 +5,17 @@ using System.Text;
 
 namespace StoreManagementWinform.Model
 {
-    class OrderMetadata
+    public class OrderMetadata
     {
         public int ID { get; set; }
         public string Staff { get; set; }
-        public int Total { get; set; }
+        private double _Total;
+
+        public double Total
+        {
+            get { return Math.Floor(_Total); }
+            set { _Total = value; }
+        }
         public DateTime CreatedAt { get; set; }
 
         public OrderMetadata()

@@ -7,7 +7,7 @@ using StoreManagementWinform.Model;
 
 namespace StoreManagementWinform.DAO
 {
-    class ProductRepository : BaseRepository
+    public class ProductRepository : BaseRepository
     {
         public List<Product> GetProducts()
         {

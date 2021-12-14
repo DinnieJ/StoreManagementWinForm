@@ -29,12 +29,11 @@ namespace StoreManagementWinform
         private void FrmOrderDetail_Load(object sender, EventArgs e)
         {
             this.orderDetailBindingSource.DataSource = this.OrderDetails;
-            this.textBox1.Text = $"{OrderDetails.AsEnumerable().Aggregate(0, (prev, current) => prev + current.Amount)} VNĐ";
+            this.textBox1.Text = $"{OrderDetails.AsEnumerable().Aggregate((double)0, (prev, current) => prev + current.Amount)} VNĐ";
         }
 
         private void orderDetailBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
