@@ -72,6 +72,25 @@ namespace StoreManagementWinform.DAO
             });
         }
 
+        public void UpdateProduct(Product p)
+        {
+            Context.ExecuteUpdate(conn =>
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = 
+                    "UPDATE [Product] SET\n" +
+                    "[Product].[Name] = @name,\n" +
+                    "[Product].[Price] = @price\n" +
+                    "WHERE [Product].[ID] = @id";
+
+                cmd.Parameters.AddWithValue("@name", p.Name);
+                cmd.Parameters.AddWithValue("@price", p.Price);
+                cmd.Parameters.AddWithValue("@id", p.ID);
+
+                cmd.ExecuteNonQuery();
+            });
+        }
+
         public void DeleteProduct(int id)
         {
             Context.ExecuteUpdate(conn =>

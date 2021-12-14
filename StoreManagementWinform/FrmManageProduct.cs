@@ -78,5 +78,18 @@ namespace StoreManagementWinform
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var product = ((Product)this.dataGridView1.CurrentRow.DataBoundItem);
+
+            using (var frmUpdateProduct = new FrmUpdateProduct() { SelectedProduct = product })
+            {
+                if(frmUpdateProduct.ShowDialog() == DialogResult.OK)
+                {
+                    this.productBindingSource.DataSource = ProductRepo.GetProducts();
+                }
+            }
+        }
     }
 }
