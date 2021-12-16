@@ -47,6 +47,8 @@ namespace StoreManagementWinform
 
             textBox1.ReadOnly = true;
             textBox2.ReadOnly = true;
+
+            button4.Enabled = false;
         }
 
         private void Tb_product_name_SelectedValueChanged(object sender, EventArgs e)
@@ -87,6 +89,9 @@ namespace StoreManagementWinform
                 this.numericUpDown1.Value = this.numericUpDown1.Minimum;
                 this.numericUpDown2.Value = this.numericUpDown2.Minimum;
                 this.label6.Text = $"Total: {GetTotal()} VNĐ";
+
+                if (dataGridView1.Rows.Count > 0) this.button4.Enabled = true;
+                else this.button4.Enabled = false;
             }
         }
 
@@ -112,6 +117,18 @@ namespace StoreManagementWinform
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.InnerException.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int ID = (int)(((Model.AddedProduct)this.dataGridView1.CurrentRow.DataBoundItem)?.ID);
+            if(ID != null)
+            {
+                var index = this.dataGridView1.CurrentRow.Index;
+                dataGridView1.Rows.RemoveAt(index);
+                Cart.RemoveAt(index);
+                this.label6.Text = $"Total: {GetTotal()} VNĐ";
             }
         }
     }

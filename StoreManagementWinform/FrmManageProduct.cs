@@ -25,8 +25,15 @@ namespace StoreManagementWinform
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.DataBindingComplete += DataGridView1_DataBindingComplete;
             this.dataGridView1.RowHeaderMouseClick += DataGridView1_RowHeaderMouseClick;
+            this.dataGridView1.CellClick += DataGridView1_CellClick;
             this.button2.Enabled = false;
             this.button3.Enabled = false;
+        }
+
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.button2.Enabled = true;
+            this.button3.Enabled = true;
         }
 
         private void DataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

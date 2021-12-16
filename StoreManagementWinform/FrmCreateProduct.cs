@@ -39,7 +39,7 @@ namespace StoreManagementWinform
                     this.DialogResult = DialogResult.OK;
                 } catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.InnerException.Message);
                 }
 
             }

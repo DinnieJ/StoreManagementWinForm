@@ -20,7 +20,7 @@ namespace StoreManagementWinform.DAO
                     "SELECT\n" +
                     "[Order].[ID],\n" +
                     "[User].[Name] as Staff,\n" +
-                    "CAST(SUM(([Product].[Price] * [OrderProduct].[Quantity]) * CAST((1 - (CAST([OrderProduct].[Sale] AS FLOAT) / 100)) AS FLOAT)) AS FLOAT) as Total,\n" +
+                    "CAST(SUM(([OrderProduct].[Price] * [OrderProduct].[Quantity]) * CAST((1 - (CAST([OrderProduct].[Sale] AS FLOAT) / 100)) AS FLOAT)) AS FLOAT) as Total,\n" +
                     "[Order].[CreatedAt]\n" +
                     "FROM [Order]\n" +
                     "INNER JOIN [OrderProduct] ON [Order].[ID] = [OrderProduct].[OrderID]\n" +
@@ -79,21 +79,22 @@ namespace StoreManagementWinform.DAO
             {
                 var cmd = conn.CreateCommand();
                 cmd.CommandText =
-                    "INSERT INTO [OrderProduct]([OrderID],[ProductID],[Sale],[Quantity]) VALUES \n";
+                    "INSERT INTO [OrderProduct]([OrderID],[ProductID],[Price],[Sale],[Quantity]) VALUES \n";
 
                 for (int i = 0; i < cart.Count; i++)
                 {
                     if (i == cart.Count - 1)
                     {
-                        cmd.CommandText += $"(@oID{i}, @pID{i}, @sale{i}, @quantity{i})";
+                        cmd.CommandText += $"(@oID{i}, @pID{i}, @price{i}, @sale{i}, @quantity{i})";
                     }
                     else
                     {
-                        cmd.CommandText += $"(@oID{i}, @pID{i}, @sale{i}, @quantity{i}),\n";
+                        cmd.CommandText += $"(@oID{i}, @pID{i}, @price{i}, @sale{i}, @quantity{i}),\n";
                     }
 
                     cmd.Parameters.Add(new SqlParameter($"@oID{i}", System.Data.SqlDbType.Int) { Value = newOrder.ID });
                     cmd.Parameters.Add(new SqlParameter($"@pID{i}", System.Data.SqlDbType.Int) { Value = cart.ElementAt(i).ID });
+                    cmd.Parameters.Add(new SqlParameter($"@price{i}", System.Data.SqlDbType.Int) { Value = cart.ElementAt(i).Price });
                     cmd.Parameters.Add(new SqlParameter($"@sale{i}", System.Data.SqlDbType.Int) { Value = cart.ElementAt(i).Sale });
                     cmd.Parameters.Add(new SqlParameter($"@quantity{i}", System.Data.SqlDbType.Int) { Value = cart.ElementAt(i).Quantity });
                 }
@@ -113,10 +114,10 @@ namespace StoreManagementWinform.DAO
                     "[OrderProduct].[ID],\n" +
                     "[Product].[ID] as ProductID,\n" +
                     "[Product].[Name] as ProductName,\n" +
-                    "[Product].[Price] as OriginalPrice,\n" +
+                    "[OrderProduct].[Price] as OriginalPrice,\n" +
                     "[OrderProduct].[Quantity] as Quantity,\n" +
                     "[OrderProduct].[Sale] as Sale,\n" +
-                    "CAST(([Product].[Price] * [OrderProduct].[Quantity] * CAST((1 - CAST([OrderProduct].[Sale] AS FLOAT) / 100) AS FLOAT)) AS FLOAT) AS Amount\n" +
+                    "CAST(([OrderProduct].[Price] * [OrderProduct].[Quantity] * CAST((1 - CAST([OrderProduct].[Sale] AS FLOAT) / 100) AS FLOAT)) AS FLOAT) AS Amount\n" +
                     "FROM [OrderProduct]\n" +
                     "INNER JOIN [Order] ON [OrderProduct].[OrderID] = [Order].[ID]\n" +
                     "INNER JOIN [Product] ON [OrderProduct].[ProductID] = [Product].[ID]\n" +
